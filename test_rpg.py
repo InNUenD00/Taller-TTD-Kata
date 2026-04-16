@@ -35,3 +35,12 @@ def test_curar_personaje():
     enemigo.atacar(heroe, dano=200) 
     heroe.curar(heroe, cantidad=100) 
     assert heroe.hp == 900
+
+def test_no_curar_mas_del_maximo():
+    heroe = Personaje()
+    enemigo = Personaje()
+
+    enemigo.atacar(heroe, dano=100) 
+    heroe.curar(heroe, cantidad=200) 
+    
+    assert heroe.hp == 1000
