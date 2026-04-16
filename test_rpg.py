@@ -1,4 +1,10 @@
-def test_paciente_es_mayor_de_edad(seld):
-    p=Paciente(edad=20)
-    self.assertTrue(p.es_mayor_de_edad())
+from rpg import Personaje
+
+def test_personaje_nace_con_estadisticas_correctas():
+    # Arrange (Preparar)
+    heroe = Personaje()
     
+    # Assert (Verificar)
+    assert heroe.hp == 1000
+    assert heroe.nivel == 1
+    assert heroe.esta_vivo == True
